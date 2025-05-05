@@ -202,6 +202,29 @@
         html.dark .text-siemens {
             color: #00b3b3 !important; /* Slightly brighter teal for dark mode */
         }
+        
+        /* Dropdown styles */
+        .dropdown-details {
+            width: 100%;
+        }
+        
+        .dropdown-summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        
+        .dropdown-summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .dropdown-content {
+            padding-top: 0.5rem;
+            overflow: hidden;
+        }
+        
+        details[open] .dropdown-icon {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -247,137 +270,155 @@
                             <p class="text-gray-700 dark:text-gray-300">Good morning everyone. I appreciate the invitation to this important dialogue. As technology leaders, we face a decisive moment that requires both strategic vision and immediate action.</p>
                         </div>
                         
-                        <!-- Challenge 1 -->
+                        <!-- Challenge 1 - Dropdown -->
                         <div class="battle-card-section">
-                            <div class="battle-card-header">Challenge #1: Cost Optimization</div>
-                            <p class="text-gray-700 dark:text-gray-300 font-semibold">Core Challenge: Instability in US-Mexico trading relationship requires optimizing costs while maintaining competitiveness.</p>
-                            
-                            <div class="mt-3">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">Two-Fold Pressure:</p>
-                                <div class="data-point">
-                                    <span class="data-icon">✓</span>
-                                    <span>Optimize internal IT costs</span>
+                            <details class="dropdown-details" open>
+                                <summary class="dropdown-summary">
+                                    <div class="battle-card-header flex items-center justify-between w-full cursor-pointer">
+                                        <span>Challenge #1: Cost Optimization</span>
+                                        <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                    </div>
+                                </summary>
+                                <div class="dropdown-content mt-2">
+                                    <p class="text-gray-700 dark:text-gray-300 font-semibold">Core Challenge: Instability in US-Mexico trading relationship requires optimizing costs while maintaining competitiveness.</p>
+                                    
+                                    <div class="mt-3">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">Two-Fold Pressure:</p>
+                                        <div class="data-point">
+                                            <span class="data-icon">✓</span>
+                                            <span>Optimize internal IT costs</span>
+                                        </div>
+                                        <div class="data-point">
+                                            <span class="data-icon">✓</span>
+                                            <span>Enable business areas through technology optimization across supply chain, PLM, inventory systems</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">AI Impact Data:</p>
+                                        <div class="data-point">
+                                            <span class="data-icon">📊</span>
+                                            <span>15-25% reduction in operating and R&D costs over 18 months (McKinsey, Bain, BCG)</span>
+                                        </div>
+                                        <div class="data-point">
+                                            <span class="data-icon">📊</span>
+                                            <span>18% reduction in operating costs in 6 months through generative AI for logistics and preventive maintenance while improving quality</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">Success Story: Enel (Energy and Gas)</p>
+                                        <div class="data-point">
+                                            <span class="data-icon">📋</span>
+                                            <span>Implemented global RPA service on unified cloud platform</span>
+                                        </div>
+                                        <p class="font-semibold ml-5 mt-2">Results:</p>
+                                        <div class="data-point ml-5">
+                                            <span class="data-icon">🏆</span>
+                                            <span>94% of requests resolved on time</span>
+                                        </div>
+                                        <div class="data-point ml-5">
+                                            <span class="data-icon">🏆</span>
+                                            <span>35% reduction in maintenance costs</span>
+                                        </div>
+                                        <div class="data-point ml-5">
+                                            <span class="data-icon">🏆</span>
+                                            <span>28% reduction in operating costs</span>
+                                        </div>
+                                        <div class="data-point ml-5">
+                                            <span class="data-icon">🏆</span>
+                                            <span>100% compliance with deadlines</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">Success Story #2: AT&T</p>
+                                        <div class="data-point">
+                                            <span class="data-icon">📋</span>
+                                            <span>Implemented an Asset Performance Management on unified IoT platform</span>
+                                        </div>
+                                        <p class="font-semibold ml-5 mt-2">Results:</p>
+                                        <div class="data-point ml-5">
+                                            <span class="data-icon">🏆</span>
+                                            <span>50% reduction of insurance and bonds for asset management</span>
+                                        </div>
+                                        <div class="data-point ml-5">
+                                            <span class="data-icon">🏆</span>
+                                            <span>80% reduction OPEX Labor (Monitoring)</span>
+                                        </div>
+                                        <div class="data-point ml-5">
+                                            <span class="data-icon">🏆</span>
+                                            <span>30% increase in efficiency (Planning and Remote assistance)</span>
+                                        </div>
+                                        <div class="data-point ml-5">
+                                            <span class="data-icon">🏆</span>
+                                            <span>100% compliance with (regulations)</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="data-point">
-                                    <span class="data-icon">✓</span>
-                                    <span>Enable business areas through technology optimization across supply chain, PLM, inventory systems</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-3">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">AI Impact Data:</p>
-                                <div class="data-point">
-                                    <span class="data-icon">📊</span>
-                                    <span>15-25% reduction in operating and R&D costs over 18 months (McKinsey, Bain, BCG)</span>
-                                </div>
-                                <div class="data-point">
-                                    <span class="data-icon">📊</span>
-                                    <span>18% reduction in operating costs in 6 months through generative AI for logistics and preventive maintenance while improving quality</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-3">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">Success Story: Enel (Energy and Gas)</p>
-                                <div class="data-point">
-                                    <span class="data-icon">📋</span>
-                                    <span>Implemented global RPA service on unified cloud platform</span>
-                                </div>
-                                <p class="font-semibold ml-5 mt-2">Results:</p>
-                                <div class="data-point ml-5">
-                                    <span class="data-icon">🏆</span>
-                                    <span>94% of requests resolved on time</span>
-                                </div>
-                                <div class="data-point ml-5">
-                                    <span class="data-icon">🏆</span>
-                                    <span>35% reduction in maintenance costs</span>
-                                </div>
-                                <div class="data-point ml-5">
-                                    <span class="data-icon">🏆</span>
-                                    <span>28% reduction in operating costs</span>
-                                </div>
-                                <div class="data-point ml-5">
-                                    <span class="data-icon">🏆</span>
-                                    <span>100% compliance with deadlines</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-3">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">Success Story #2: AT&T</p>
-                                <div class="data-point">
-                                    <span class="data-icon">📋</span>
-                                    <span>Implemented an Asset Performance Management on unified IoT platform</span>
-                                </div>
-                                <p class="font-semibold ml-5 mt-2">Results:</p>
-                                <div class="data-point ml-5">
-                                    <span class="data-icon">🏆</span>
-                                    <span>50% reduction of insurance and bonds for asset management</span>
-                                </div>
-                                <div class="data-point ml-5">
-                                    <span class="data-icon">🏆</span>
-                                    <span>80% reduction OPEX Labor (Monitoring)</span>
-                                </div>
-                                <div class="data-point ml-5">
-                                    <span class="data-icon">🏆</span>
-                                    <span>30% increase in efficiency (Planning and Remote assistance)</span>
-                                </div>
-                                <div class="data-point ml-5">
-                                    <span class="data-icon">🏆</span>
-                                    <span>100% compliance with (regulations)</span>
-                                </div>
-                            </div>
+                            </details>
                         </div>
                         
-                        <!-- Challenge 2 -->
+                        <!-- Challenge 2 - Dropdown -->
                         <div class="battle-card-section">
-                            <div class="battle-card-header">Challenge #2: Market Diversification</div>
-                            <p class="text-gray-700 dark:text-gray-300 font-semibold">Core Challenge: Reducing dependency on US market by exploring new global opportunities.</p>
-                            
-                            <div class="mt-3">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">Market Context:</p>
-                                <div class="data-point">
-                                    <span class="data-icon">📊</span>
-                                    <span>Mexico has ~30 free trade agreements covering 57% of global economy</span>
-                                </div>
-                                <div class="data-point">
-                                    <span class="data-icon">📊</span>
-                                    <span>Record $475B in US exports in 2023</span>
-                                </div>
-                                <div class="data-point">
-                                    <span class="data-icon">⚠️</span>
-                                    <span>Potential USMCA renegotiation in 2026 could impact manufacturing appeal</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-3">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">Technology Requirements:</p>
-                                <div class="ml-2">
-                                    <p class="font-semibold">1. Strategic Identification</p>
-                                    <div class="data-point ml-3">
-                                        <span class="data-icon">•</span>
-                                        <span>Advanced data analytics and AI to evaluate global markets</span>
+                            <details class="dropdown-details" open>
+                                <summary class="dropdown-summary">
+                                    <div class="battle-card-header flex items-center justify-between w-full cursor-pointer">
+                                        <span>Challenge #2: Market Diversification</span>
+                                        <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
                                     </div>
-                                    <div class="data-point ml-3">
-                                        <span class="data-icon">•</span>
-                                        <span>Automated profit-and-loss modeling for different locations</span>
+                                </summary>
+                                <div class="dropdown-content mt-2">
+                                    <p class="text-gray-700 dark:text-gray-300 font-semibold">Core Challenge: Reducing dependency on US market by exploring new global opportunities.</p>
+                                    
+                                    <div class="mt-3">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">Market Context:</p>
+                                        <div class="data-point">
+                                            <span class="data-icon">📊</span>
+                                            <span>Mexico has ~30 free trade agreements covering 57% of global economy</span>
+                                        </div>
+                                        <div class="data-point">
+                                            <span class="data-icon">📊</span>
+                                            <span>Record $475B in US exports in 2023</span>
+                                        </div>
+                                        <div class="data-point">
+                                            <span class="data-icon">⚠️</span>
+                                            <span>Potential USMCA renegotiation in 2026 could impact manufacturing appeal</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">Technology Requirements:</p>
+                                        <div class="ml-2">
+                                            <p class="font-semibold">1. Strategic Identification</p>
+                                            <div class="data-point ml-3">
+                                                <span class="data-icon">•</span>
+                                                <span>Advanced data analytics and AI to evaluate global markets</span>
+                                            </div>
+                                            <div class="data-point ml-3">
+                                                <span class="data-icon">•</span>
+                                                <span>Automated profit-and-loss modeling for different locations</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ml-2 mt-2">
+                                            <p class="font-semibold">2. Operational Adaptation</p>
+                                            <div class="data-point ml-3">
+                                                <span class="data-icon">•</span>
+                                                <span>Flexible technology platforms for rapid process adaptation</span>
+                                            </div>
+                                            <div class="data-point ml-3">
+                                                <span class="data-icon">•</span>
+                                                <span>Digital transformation to quickly meet diverse market standards</span>
+                                            </div>
+                                            <div class="data-point ml-3">
+                                                <span class="data-icon">📊</span>
+                                                <span>25-30% reduction in market entry timelines compared to pre-digital processes</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                
-                                <div class="ml-2 mt-2">
-                                    <p class="font-semibold">2. Operational Adaptation</p>
-                                    <div class="data-point ml-3">
-                                        <span class="data-icon">•</span>
-                                        <span>Flexible technology platforms for rapid process adaptation</span>
-                                    </div>
-                                    <div class="data-point ml-3">
-                                        <span class="data-icon">•</span>
-                                        <span>Digital transformation to quickly meet diverse market standards</span>
-                                    </div>
-                                    <div class="data-point ml-3">
-                                        <span class="data-icon">📊</span>
-                                        <span>25-30% reduction in market entry timelines compared to pre-digital processes</span>
-                                    </div>
-                                </div>
-                            </div>
+                            </details>
                         </div>
                         
                         <!-- Collaboration & Next Steps -->
