@@ -225,6 +225,56 @@
         details[open] .dropdown-icon {
             transform: rotate(180deg);
         }
+        
+        /* Tab styles */
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .tab-button {
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            padding: 12px 20px;
+            font-size: 16px;
+            min-height: 54px;
+            border-radius: 12px;
+        }
+        
+        .tab-button.active {
+            background-color: #009999;
+            color: white;
+        }
+        
+        .tab-button:not(.active) {
+            background-color: #f5f5f7;
+            color: #333;
+        }
+        
+        html.dark .tab-button:not(.active) {
+            background-color: #333;
+            color: #f5f5f5;
+        }
+        
+        /* Mobile-friendly tab buttons */
+        @media (max-width: 640px) {
+            .tab-button {
+                flex: 1;
+                font-size: 14px;
+                padding: 12px 12px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -254,10 +304,20 @@
             </div>
         </div>
         
+        <!-- Tab Navigation -->
+        <div class="tab-navigation flex space-x-2 md:space-x-4 mb-6 overflow-x-auto no-print">
+            <button id="tab-cio" class="tab-button active flex items-center justify-center" onclick="switchTab('cio')">
+                <i class="fas fa-user-tie mr-2"></i> Regional CIO Keynote
+            </button>
+            <button id="tab-questions" class="tab-button flex items-center justify-center" onclick="switchTab('questions')">
+                <i class="fas fa-comments mr-2"></i> Roundtable Q&A
+            </button>
+        </div>
+        
         <!-- Content Areas - Apple-Style Layout -->
         <div id="all-content" class="space-y-12">
-            <!-- Regional CIO Speech -->
-            <div class="mb-8">
+            <!-- Tab Content: Regional CIO Keynote -->
+            <div id="content-cio" class="tab-content active mb-8">
                 <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">Regional CIO Keynote</h2>
                 
                 <div class="card bg-cardBg dark:bg-cardBgDark rounded-xl shadow-apple dark:shadow-apple-dark overflow-hidden">
@@ -421,51 +481,63 @@
                             </details>
                         </div>
                         
-                        <!-- Collaboration & Next Steps -->
+                        <!-- Collaboration & Next Steps - Dropdown -->
                         <div class="battle-card-section">
-                            <div class="battle-card-header">Collaboration & Next Steps</div>
-                            
-                            <div class="mt-2">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">Partnership Opportunities:</p>
-                                <div class="data-point">
-                                    <span class="data-icon">🤝</span>
-                                    <span>Solutions combining global innovation with regional adaptability</span>
+                            <details class="dropdown-details" open>
+                                <summary class="dropdown-summary">
+                                    <div class="battle-card-header flex items-center justify-between w-full cursor-pointer">
+                                        <span>Collaboration & Next Steps</span>
+                                        <i class="fas fa-chevron-down dropdown-icon transition-transform duration-300"></i>
+                                    </div>
+                                </summary>
+                                <div class="dropdown-content mt-2">
+                                    <div class="mt-2">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">Partnership Opportunities:</p>
+                                        <div class="data-point">
+                                            <span class="data-icon">🤝</span>
+                                            <span>Solutions combining global innovation with regional adaptability</span>
+                                        </div>
+                                        <div class="data-point">
+                                            <span class="data-icon">🤝</span>
+                                            <span>Knowledge transfer models for accelerated technology adoption</span>
+                                        </div>
+                                        <div class="data-point">
+                                            <span class="data-icon">🤝</span>
+                                            <span>Talent development alliances in Mexico</span>
+                                        </div>
+                                        <div class="data-point">
+                                            <span class="data-icon">🤝</span>
+                                            <span>Sustainable IT practices and environmental solutions</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">Call to Action:</p>
+                                        <p class="text-gray-700 dark:text-gray-300">This dialogue will allow us to identify concrete areas of collaboration that strengthen our collective competitiveness in an increasingly challenging global environment.</p>
+                                    </div>
+                                    
+                                    <div class="mt-3 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                                        <p class="font-semibold text-gray-800 dark:text-gray-200">Supporting Data Points:</p>
+                                        <ul class="list-disc ml-5 text-gray-700 dark:text-gray-300">
+                                            <li>Mexico surpassed China as top US trading partner in 2023</li>
+                                            <li>Manufacturing FDI has risen by 20% annually since 2019 (vs. 7% globally)</li>
+                                            <li>Automotive sector accounted for 40% of FDI, nearly doubling to $8.5B in 2023</li>
+                                            <li>BCG emphasizes "comprehensive competitiveness analysis" as critical strategy</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="data-point">
-                                    <span class="data-icon">🤝</span>
-                                    <span>Knowledge transfer models for accelerated technology adoption</span>
-                                </div>
-                                <div class="data-point">
-                                    <span class="data-icon">🤝</span>
-                                    <span>Talent development alliances in Mexico</span>
-                                </div>
-                                <div class="data-point">
-                                    <span class="data-icon">🤝</span>
-                                    <span>Sustainable IT practices and environmental solutions</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-3">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">Call to Action:</p>
-                                <p class="text-gray-700 dark:text-gray-300">This dialogue will allow us to identify concrete areas of collaboration that strengthen our collective competitiveness in an increasingly challenging global environment.</p>
-                            </div>
-                            
-                            <div class="mt-3 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
-                                <p class="font-semibold text-gray-800 dark:text-gray-200">Supporting Data Points:</p>
-                                <ul class="list-disc ml-5 text-gray-700 dark:text-gray-300">
-                                    <li>Mexico surpassed China as top US trading partner in 2023</li>
-                                    <li>Manufacturing FDI has risen by 20% annually since 2019 (vs. 7% globally)</li>
-                                    <li>Automotive sector accounted for 40% of FDI, nearly doubling to $8.5B in 2023</li>
-                                    <li>BCG emphasizes "comprehensive competitiveness analysis" as critical strategy</li>
-                                </ul>
-                            </div>
+                            </details>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Questions 1-3 -->
-            <div class="mb-8">
+            <!-- Tab Content: Roundtable Q&A -->
+            <div id="content-questions" class="tab-content mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">Roundtable Q&A</h2>
+                
+                <!-- Questions 1-3 -->
+                <div class="mb-8">
                 <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">Questions 1-3</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -837,6 +909,41 @@
     </div>
     
     <script>
+        // Tab switching functionality
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Deactivate all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Activate the selected tab and button
+            document.getElementById(`content-${tabId}`).classList.add('active');
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            
+            // If in mobile view, scroll to top when switching tabs
+            if (window.innerWidth < 768) {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+            
+            // Save the active tab to sessionStorage for persistence
+            sessionStorage.setItem('activeTab', tabId);
+        }
+        
+        // Initialize tabs - check if there's a saved tab selection
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTab = sessionStorage.getItem('activeTab');
+            if (savedTab) {
+                switchTab(savedTab);
+            }
+        });
+        
         // Dark mode toggle
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         
